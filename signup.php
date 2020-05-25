@@ -2,11 +2,15 @@
 	$title = 'Sign Up';
 	include 'includes/header.php';
 	include 'includes/login_signup_nav.php';
-	// SIGNUP FORM
-	// Receive input from client side
+	
+	// Prepare error message triggers
 	$form_input_error = false;
 	$password_match_error = false;
 	$email_exists_error = false;
+	$password_requirements_error = false;
+	$email_requirements_error = false;
+
+	//user input from html form
 if(isset($_POST['fname'],$_POST['lname'],$_POST['email'],$_POST['password'],$_POST['confirmPassword'])){
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
@@ -14,30 +18,44 @@ if(isset($_POST['fname'],$_POST['lname'],$_POST['email'],$_POST['password'],$_PO
 	$password = $_POST['password'];
 	$password_confirmation = $_POST['confirmPassword'];
 
-	// Prepare error message triggers
+	//Check password strength
+	$uppercase = preg_match('@[A-Z]@', $password);
+	$lowercase = preg_match('@[a-z]@', $password);
+	$number    = preg_match('@[0-9]@', $password);
+	$specialChars = preg_match('@[^\w]@', $password);
 
-	
-	// Verify email uniqueness
+	//Check email validation
+	$validateEmail = preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $email);
+
+	//if submit button is pressed
 	if(isset($_POST['submit'])){
 		// Validate form inputs are not empty
 		if($fname == NULL || $lname == NULL || $email == NULL || $password == NULL || $password_confirmation == NULL) {
 			$form_input_error = true;
-		} elseif($password != $password_confirmation) {
+		} 
+		// checking if both passwords match
+		elseif($password != $password_confirmation) {
 			$password_match_error = true;
-		} else {
-			// Search datastore for if email input exists
+
+		// check if password meets requirements
+		} elseif(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8){
+			$password_requirements_error = true;
+		}
+		elseif(!$validateEmail){
+			$email_requirements_error = true;
+		}
+		else {
+			// Search database for email existence
 			$q = "select email from users where email = '$email'";
             $result = mysqli_query($db, $q);
 			if($row = mysqli_fetch_assoc($result)){
-				// Trigger error alert for email existing in datastore
+				// Trigger error alert for email existing in database
 				$email_exists_error = true;
 			}
 			else {
-				$q = "insert into users values(null,'$fname','$lname','$email',SHA('$password'),SHA('$password_confirmation'))";
+				$q = "insert into users values(null,'$fname','$lname','$email',SHA('$password'),SHA('$password_confirmation'),false,now())";
 				mysqli_query($db, $q) or die(mysqli_error($db));
-				// Start a new session and redirect to home.php
-				$_SESSION['login'] = $email;
-				echo '<script>window.location.href="home.php";</script>';
+				echo '<script>window.location.href="/assignment2-sepm/adminPanel.php";</script>';
 			}
 		}
 }
@@ -57,9 +75,14 @@ if(isset($_POST['fname'],$_POST['lname'],$_POST['email'],$_POST['password'],$_PO
 						// Display error message if passwords do not match
 						elseif($password_match_error == true)
 							echo '<div class="alert alert-danger" role="alert">Those passwords did not match. Please try again.</div>';
-						// Display error message if email was found in datastore
+						// Display error message if email was found in database
 						elseif($email_exists_error == true)
 							echo '<div class="alert alert-warning" role="alert">The email you have entered currently belongs to an account. Please try another email.</div>';
+						// Display error message if password does not meet requirements
+						elseif($password_requirements_error == true)
+							echo '<div class="alert alert-warning" role="alert">Please include an uppercase and lowercase letter and a number and a special character and make sure your password is atleast 8 digits long</div>';
+						elseif($email_requirements_error == true)
+							echo '<div class="alert alert-warning" role="alert">Please use a valid email address</div>';
 					?>
 					<div class="form-group">
 						<input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" required="required">
@@ -81,7 +104,7 @@ if(isset($_POST['fname'],$_POST['lname'],$_POST['email'],$_POST['password'],$_PO
 					</div>
 				</form>
 				<div class="text-center">
-					<p>Already have an account? <a href="login">Login here</a>.</p>
+					<p>Already have an account? <a href="login.php">Login here</a>.</p>
 				</div>
 			</div>
 		</div>

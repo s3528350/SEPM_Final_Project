@@ -60,7 +60,7 @@ if (isset($_POST['email'], $_POST['password'])) {
 					</div>
 				</form>
 				<div class="text-center">
-					<p>Not a member? <a href="signup">Sign up now</a>.</p>
+					<p>Not a member? <a href="signup.php">Sign up now</a>.</p>
 				</div>
 			</div>
 		</div>

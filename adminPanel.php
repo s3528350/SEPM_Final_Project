@@ -10,6 +10,7 @@ $email_exists_error = false;
 $password_requirements_error = false;
 $email_requirements_error = false;
 
+$user_deleted = false;
 
 //user input from html form
 if (isset($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['password'], $_POST['confirmPassword'])) {
@@ -73,7 +74,17 @@ if (isset($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['password'],
   
 
   <div class="card-body">
+  <?php
+  if(isset($_SESSION['success']) && $_SESSION['success'] !=''){
+    echo '<h2>'.$_SESSION['success'].'</h2>';
+    unset($_SESSION['succes']);
+  }
 
+  if(isset($_SESSION['status']) && $_SESSION['status'] !=''){
+    echo '<h2>'.$_SESSION['status'].'</h2>';
+    unset($_SESSION['status']);
+  }
+  ?>
     <div class="table-responsive">
 
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -114,8 +125,8 @@ if (isset($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['password'],
                 </form>
             </td>
             <td>
-                <form action="" method="post">
-                  <input type="hidden" name="delete_id" value="">
+                <form action="delete_user.php" method="post">
+                  <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
                   <button type="submit" name="delete_btn" class="btn btn-danger"> DELETE</button>
                 </form>
             </td>

@@ -5,6 +5,6 @@
 ?>
 
 <div class="container justify-content-center">
-	<a class="navbar-brand" href="/"><img src="/img/layouts/logo.svg" alt="Gallery Logo"></a>
+	<a class="navbar-brand" href="/"><img src="img/layouts/logo.png" alt="Gallery Logo"></a>
 </div>
 </header>

@@ -15,7 +15,6 @@ if (isset($_SESSION['login'])) {
 				<h1>Header</h1>
 				<h3>Small Header</h3>
 			</div>
-			<a class="btn btn-lg btn-primary" href="signup.php">Signup </a>
 		</div>
 	</div>
 	<div id="about">

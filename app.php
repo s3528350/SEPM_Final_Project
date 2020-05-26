@@ -2,7 +2,8 @@
 	$mysql_username = "root";
 	$mysql_password = "Rmit1234";
 	$mysql_db_name = "humanoid";
-	$upload_table_user = "user";
+	$table_user = "user";
+	$table_location = "location";
 
 	$app_name = 'Humanoid';
 

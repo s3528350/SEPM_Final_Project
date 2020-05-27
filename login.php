@@ -11,9 +11,6 @@ if (isset($_POST['email'], $_POST['password'])) {
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 
-	// Prepare error message triggers
-
-
 	// Verify email uniqueness
 	if (isset($_POST['submit'])) {
 		// Validate form inputs are not empty
@@ -21,14 +18,21 @@ if (isset($_POST['email'], $_POST['password'])) {
 			$form_input_error = true;
 		} else {
 			// Search datastore to check login credentials
-			$q = "select email, password from users where email = '$email' && password = SHA('$password')";
+			$q = "select email, password,rights from user where email = '$email' && password = SHA('$password')";
 			$result = mysqli_query($db, $q);
 			if ($row = mysqli_fetch_assoc($result)) {
-				$_SESSION['login'] = $email;
-				echo '<script>window.location.href="home.php";</script>';
-			} else {
-				// Trigger error alert for email not existing
-				$login_fail_error = true;
+				if ($row['email'] != $email || $row['password'] != $password){
+					$login_fail_error = true;
+				}
+				if ($row['rights'] == 'root') {
+					$_SESSION['login'] = $email;
+					echo '<script>window.location.href="adminPanel.php";</script>';
+				} elseif ($row['rights'] == 'user') {
+					$_SESSION['login'] = $email;
+					echo '<script>window.location.href="index.php";</script>';
+				} else {
+					$login_fail_error = true;
+				}
 			}
 		}
 	}

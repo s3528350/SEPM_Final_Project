@@ -52,7 +52,7 @@ if (isset($_SESSION['login'])) {
 			</div>
 			<div class="row feature-row">
 				<div class="col-sm feature-image">
-					<img src="/img/landing_page/app_engine.svg" alt="Google App Engine Logo">
+					<img src="/img/landing_page/app_engine.svg" alt="Image1">
 				</div>
 				<div class="col-sm feature-detail">
 					<h3>Service 1</h3>
@@ -65,12 +65,12 @@ if (isset($_SESSION['login'])) {
 					<p>Lorem ipsum text</p>
 				</div>
 				<div class="col-sm feature-image">
-					<img src="/img/landing_page/cloud_datastore.svg" alt="Google Cloud Datastore Logo">
+					<img src="/img/landing_page/cloud_datastore.svg" alt="Image2">
 				</div>
 			</div>
 			<div class="row feature-row">
 				<div class="col-sm feature-image">
-					<img src="/img/landing_page/cloud_sql.svg" alt="Google Cloud SQL Logo">
+					<img src="/img/landing_page/cloud_sql.svg" alt="Image3">
 				</div>
 				<div class="col-sm feature-detail">
 					<h3>Service 3</h3>
@@ -83,7 +83,7 @@ if (isset($_SESSION['login'])) {
 					<p>Lorem ipsum text</p>
 				</div>
 				<div class="col-sm feature-image">
-					<img src="/img/landing_page/cloud_storage.svg" alt="Google Cloud Storage API Logo">
+					<img src="/img/landing_page/cloud_storage.svg" alt="Image4">
 				</div>
 			</div>
 		</div>

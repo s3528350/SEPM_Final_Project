@@ -53,7 +53,7 @@ if(isset($_POST['fname'],$_POST['lname'],$_POST['email'],$_POST['password'],$_PO
 				$email_exists_error = true;
 			}
 			else {
-				$q = "insert into users values(null,'$fname','$lname','$email',SHA('$password'),SHA('$password_confirmation'),false,now())";
+				$q = "insert into $table_user values(null,'$fname','$lname','$email',SHA('$password'),SHA('$password_confirmation'),'user',now(),now())";
 				mysqli_query($db, $q) or die(mysqli_error($db));
 				echo '<script>window.location.href="/assignment2-sepm/adminPanel.php";</script>';
 			}

@@ -1,17 +1,6 @@
 <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary"><a type="button" class="btn btn-primary" href="add_location.php">Add Location</a></h6>
     <div class="card-body">
-        <?php
-        if (isset($_SESSION['success']) && $_SESSION['success'] != '') {
-            echo '<h2>' . $_SESSION['success'] . '</h2>';
-            unset($_SESSION['succes']);
-        }
-
-        if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
-            echo '<h2>' . $_SESSION['status'] . '</h2>';
-            unset($_SESSION['status']);
-        }
-        ?>
         <div class="table-responsive">
 
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

@@ -3,7 +3,7 @@
 		// Display the following when logged in
 		if(isset($_SESSION['login'])):
 	?>
-	<a class="navbar-brand mr-auto" href="home.php"><img src="img/layouts/logo.png" alt="Humanoid Logo"></a>
+	<a class="navbar-brand mr-auto" href="/assignment2-sepm/"><img src="img/layouts/logo.png" alt="Humanoid Logo"></a>
 	<ul class="navbar-nav flex-row">
 		<li><a class="btn btn-danger" href="logout.php">Log out</a></li>
 	</ul>

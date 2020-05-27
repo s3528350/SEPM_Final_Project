@@ -1,7 +1,10 @@
 <?php
 $title = 'Admin Panel';
 include 'includes/header.php';
-include 'includes/login_signup_nav.php';
+include 'includes/nav.php';
+
+$q= "select * from user where rights = 'root'";
+$result = mysqli_query($db, $q);
 
 // Prepare error message triggers
 $form_input_error = false;

@@ -6,4 +6,5 @@ Saif syed
 yousef
 Andrian
 
-SEPM Project
+SEPM Project: Humanoid Robot touring system
+

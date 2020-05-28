@@ -1,5 +1,7 @@
 <?php
 	session_start();
-	unset($_SESSION['login']);
-	header('Location: /assignment2-sepm/');
+	unset($_SESSION['admin']);
+	unset($_SESSION['assistant']);
+	unset($_SESSION['root']);
+	header('Location: index.php');
 ?>

@@ -13,7 +13,9 @@
                         <th>Created at </th>
                         <th>Rights </th>
                         <th>EDIT </th>
+                        <?php if(isset($_SESSION['root'])):?>
                         <th>DELETE </th>
+                        <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,20 +35,16 @@
                                 <form action="update_user.php" method="post">
                                     <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
                                     <button type="submit" name="edit_btn" class="btn btn-success"> EDIT</button>
-                                   
                                 </form>
                             </td>
+                            <?php if(isset($_SESSION['root'])):?>
                             <td>
                                 <form action="delete_user.php" method="post">
                                     <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                                    <?php if ($row['rights'] != 'root'){?>
                                     <button type="submit" name="delete_btn" class="btn btn-danger"> DELETE</button>
-                                    <?php }
-                                   elseif ($row['rights'] == 'root'){ 
-                                   echo "<h6>Cant delete</h6>";
-                                   }?>
                                 </form>
                             </td>
+                            <?php endif; ?>
                         </tr>
                     <?php } ?>
                 </tbody>

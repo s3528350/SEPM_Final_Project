@@ -8,8 +8,8 @@ if(isset($_POST['update_btn']))
     $lname = $_POST['edit_lname'];
     $email = $_POST['edit_email'];
     $password = $_POST['edit_password'];
-
-    $q = "UPDATE $table_user set fname='$fname', lname='$lname', email='$email', password = SHA('$password') where id = '$id'";
+    $rights = $_POST['edit_rights'];
+    $q = "UPDATE $table_user set fname='$fname', lname='$lname', email='$email', password = SHA('$password'), rights = '$rights' where id = '$id'";
     mysqli_query($db, $q) or die(mysqli_error($db));
     header("Location: adminPanel.php");
 }

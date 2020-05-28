@@ -21,13 +21,14 @@ include 'includes/nav.php';
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <?php include 'includes/users.php' ?>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Upcoming...</div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <?php include 'includes/locations.php' ?>
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Upcoming...</div>
       </div>
 
       <?php
       include('includes/footer.php');
  else:
-  header('Location: index.php');
+  header('Location: login.php');
  endif;
       ?>

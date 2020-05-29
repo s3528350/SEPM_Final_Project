@@ -28,6 +28,6 @@ include 'includes/nav.php';
       <?php
       include('includes/footer.php');
  else:
-  header('Location: index.php');
+  header('Location: login.php');
  endif;
       ?>

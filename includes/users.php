@@ -41,7 +41,7 @@
                             <td>
                                 <form action="delete_user.php" method="post">
                                     <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                                    <button type="submit" name="delete_btn" class="btn btn-danger"> DELETE</button>
+                                    <H6>Upcoming Feature</H6>
                                 </form>
                             </td>
                             <?php endif; ?>

@@ -31,7 +31,7 @@ if (isset($_POST['email'], $_POST['password'])) {
 			} 
 			else if ($usertype['rights'] == "assistant") {
 				$_SESSION['assistant'] = $email;
-				header('Location: index.php');
+				header('Location: memberPanel.php');
 			}
 			else if ($usertype['rights'] == "admin") {
 				$_SESSION['admin'] = $email;

@@ -1,15 +1,7 @@
 <div class="container">
 	<?php
-	// Display the following when logged in
-	if (isset($_SESSION['username'])) {
-	?>
-		<a class="navbar-brand mr-auto" href="/assignment2-sepm/"><img src="img/layouts/logo.png" alt="Humanoid Logo"></a>
-		<ul class="navbar-nav flex-row">
-			<li><a class="btn btn-danger" href="logout.php">Log out</a></li>
-		</ul>
-	<?php
-		// Display the following when logged in
-	} else if (isset($_SESSION['admin']) || isset($_SESSION['root'])) {
+		// Display the following when logged in as root or admin user
+	if (isset($_SESSION['admin']) || isset($_SESSION['root'])) {
 	?>
 		<a class="navbar-brand mr-auto" href="/assignment2-sepm/"><img src="img/layouts/logo.png" alt="Humanoid Logo"></a>
 		<ul class="navbar-nav flex-row">
@@ -17,11 +9,12 @@
 			<li><a class="btn btn-danger" href="logout.php">Log out</a></li>
 		</ul>
 	<?php
-		// Display the following when logged in
+		// Display the following when logged in as assistant user
 	} else if (isset($_SESSION['assistant'])) {
 	?>
 		<a class="navbar-brand mr-auto" href="/assignment2-sepm/"><img src="img/layouts/logo.png" alt="Humanoid Logo"></a>
 		<ul class="navbar-nav flex-row">
+			<li><a class="btn btn-light mr-2" href="memberPanel.php">Members Panel</a></li>
 			<li><a class="btn btn-danger" href="logout.php">Log out</a></li>
 		</ul>
 	<?php

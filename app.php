@@ -4,6 +4,8 @@
 	$mysql_db_name = "humanoid";
 	$table_user = "user";
 	$table_location = "location";
+	$table_tour = "tour";
+	$table_tour_type = "tour_type";
 
 	$app_name = 'Humanoid';
 

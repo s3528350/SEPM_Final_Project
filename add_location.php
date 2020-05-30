@@ -32,7 +32,7 @@ if(isset($_POST['name'],$_POST['description'],$_POST['longitude'],$_POST['latitu
 			else {
 				$q = "insert into $table_location values(null,'$name','$description','$longitude','$latitude','$minTimeSpent',null,now())";
 				mysqli_query($db, $q) or die(mysqli_error($db));
-				echo '<script>window.location.href="/assignment2-sepm/adminPanel.php";</script>';
+				echo '<script>window.location.href="/assignment2-sepm/memberPanel.php";</script>';
 			}
 		}
 }

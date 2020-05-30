@@ -4,6 +4,7 @@ use humanoid;
 drop table user;
 drop table location;
 drop table tour;
+drop table tour_type;
 CREATE TABLE IF NOT EXISTS user (id INT(12) UNSIGNED AUTO_INCREMENT PRIMARY KEY, fname VARCHAR(50) NOT NULL, lname VARCHAR(50) NOT NULL,email VARCHAR(50) NOT NULL, password CHAR(40) NOT NULL, confirmPassword CHAR(40) NOT NULL, rights VARCHAR(40), created_at VARCHAR(40), updated_at VARCHAR(40));
 insert into user values(null, 'root', 'user', 'rootuser@humanoid.com',SHA('1234'),SHA('1234'),'root',now(),now());
 insert into user values(null, 'admin', 'user', 'adminuser@humanoid.com',SHA('1234'),SHA('1234'),'admin',now(),now());
@@ -11,8 +12,8 @@ insert into user values(null, 'assistant', 'user', 'assistantuser@humanoid.com',
 drop table location;
 CREATE TABLE IF NOT EXISTS location (id INT(12) UNSIGNED AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50) NOT NULL,description VARCHAR(50) NOT NULL, longitude VARCHAR(50) NOT NULL,latitude VARCHAR(50) NOT NULL, minTimeSpent VARCHAR(50) NOT NULL, created_at VARCHAR(40), updated_at VARCHAR(40));
 insert into location values(null, 'Melbourne', 'Melbourne City', '13213.12312','23123231.123','15',now(),now());
-CREATE TABLE IF NOT EXISTS tour (id INT(12) UNSIGNED AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50) NOT NULL, type VARCHAR(50) NOT NULL,location VARCHAR(50) NOT NULL, min_duration VARCHAR(50) NOT NULL, created_at VARCHAR(40), updated_at VARCHAR(40) );
-insert into tour values(null, 'Melbourne', 'City','Art Gallery', '15',now(),now());
+CREATE TABLE IF NOT EXISTS tour (id INT(12) UNSIGNED AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50) NOT NULL, type VARCHAR(50) NOT NULL,location1 VARCHAR(50) NOT NULL,location2 VARCHAR(50) NOT NULL,location3 VARCHAR(50) NOT NULL, min_duration VARCHAR(50) NOT NULL, created_at VARCHAR(40), updated_at VARCHAR(40));
+insert into tour values(null, 'Melbourne', 'City','Art Gallery','Melbourne Zoo','Eureka Tower', '15',now(),now());
 CREATE TABLE IF NOT EXISTS tour_type (id INT(12) UNSIGNED AUTO_INCREMENT PRIMARY KEY, type VARCHAR(50) NOT NULL, created_at VARCHAR(40), updated_at VARCHAR(40));
 insert into tour_type values(null, 'City', now(),now());
 insert into tour_type values(null, 'Museum',now(),now());

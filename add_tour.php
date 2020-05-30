@@ -8,10 +8,13 @@ $form_input_error = false;
 $tour_exists_error = false;
 
 //user input from html form
-if (isset($_POST['name'], $_POST['type'], $_POST['min_duration'])) {
+if (isset($_POST['name'], $_POST['type'], $_POST['min_duration'],$_POST['location1'],$_POST['location2'], $_POST['location3'] )) {
 	$name = $_POST['name'];
 	$type = $_POST['type'];
 	$min_duration = $_POST['min_duration'];
+	$location1 = $_POST['location1'];
+	$location2 = $_POST['location2'];
+	$location3 = $_POST['location3'];
 
 	//if submit button is pressed
 	if (isset($_POST['submit'])) {
@@ -28,7 +31,7 @@ if (isset($_POST['name'], $_POST['type'], $_POST['min_duration'])) {
 		// 		$tour_exists_error = true;
 		// 	}
 		else {
-			$q = "insert into $table_tour values(null,'$name','$type','$min_duration',now(),now())";
+			$q = "insert into $table_tour values(null,'$name','$type','$location1','$location2','$location3','$min_duration',now(),now())";
 			mysqli_query($db, $q) or die(mysqli_error($db));
 			echo '<script>window.location.href="/assignment2-sepm/memberPanel.php";</script>';
 		}
@@ -69,8 +72,36 @@ if (isset($_POST['name'], $_POST['type'], $_POST['min_duration'])) {
 
 					</div>
 					<div class="form-group">
-					<select id="menu" class="form-control" name="type" onchange="navigate();">
-						<option value="#">Select Location</option>
+					<select id="menu" class="form-control" name="location1" onchange="navigate();">
+						<option value="#">Select Location 1</option>
+						<?php
+						$q = "select distinct name from $table_location";
+						$results = mysqli_query($db, $q) or die(mysqli_error($db));
+
+						while ($row = mysqli_fetch_array($results)) {
+
+							print "<option value= {$row['name']}>{$row['name']}</option>";
+						}
+						?>
+					</select>
+					</div>
+					<div class="form-group">
+					<select id="menu" class="form-control" name="location2" onchange="navigate();">
+						<option value="#">Select Location 2</option>
+						<?php
+						$q = "select distinct name from $table_location";
+						$results = mysqli_query($db, $q) or die(mysqli_error($db));
+
+						while ($row = mysqli_fetch_array($results)) {
+
+							print "<option value= {$row['name']}>{$row['name']}</option>";
+						}
+						?>
+					</select>
+					</div>
+					<div class="form-group">
+					<select id="menu" class="form-control" name="location3" onchange="navigate();">
+						<option value="#">Select Location 3</option>
 						<?php
 						$q = "select distinct name from $table_location";
 						$results = mysqli_query($db, $q) or die(mysqli_error($db));

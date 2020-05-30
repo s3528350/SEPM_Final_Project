@@ -23,7 +23,8 @@ include 'includes/nav.php';
         <?php include 'includes/users.php' ?>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <?php include 'includes/locations.php' ?>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Upcoming...</div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <?php include 'includes/tours.php' ?>
       </div>
 
       <?php

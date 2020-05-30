@@ -24,6 +24,15 @@ if (isset($_POST['edit_btn'])) {
                                     <input type="text" class="form-control" name="edit_name" id="name" value="<?php echo $row['name']; ?>" placeholder="Tour Name" required="required">
                                 </div>
                                 <div class="form-group">
+                                    <input type="text" class="form-control" name="edit_location1" id="edit_location1" value="<?php echo $row['location1']; ?>" placeholder="Location 1" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="edit_location2" id="edit_location2" value="<?php echo $row['location2']; ?>" placeholder="Location 2" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="edit_location3" id="edit_location3" value="<?php echo $row['location3']; ?>" placeholder="Location 3" required="required">
+                                </div>
+                                <div class="form-group">
                                     <input type="text" class="form-control" name="edit_min_time" id="description" value="<?php echo $row['min_duration']; ?>" placeholder="Minimum Time" required="required">
                                 </div>
                                 <div class="form-group">

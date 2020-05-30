@@ -13,7 +13,7 @@ if (isset($_SESSION['login'])) {
 		<div class="container">
 			<div id="hero-detail">
 				<h1>Humanoid Robot Touring System</h1>
-				<h3>Small Header</h3>
+				<h3> </h3>
 			</div>
 			<a class="btn btn-lg btn-primary" href="signup.php">Signup </a>
 		</div>
@@ -87,10 +87,38 @@ if (isset($_SESSION['login'])) {
 				</div>
 				<div class="col-sm feature-detail">
 					<h3>Tours</h3>
-					<p>CHoose from a set of tour types available on our website, and set a tour on the desired location you wish to tour.</p>
+					<p>Choose from a set of tour types available on our website, and set a tour on the desired location you wish to tour.</p>
 				</div>
 			</div>
-		
+		<div class="row feature-row">
+				<div class="col-sm feature-detail">
+					<div class="col">
+					<h2>About Us</h2>
+					<p>
+					Humanoid Robot is a virtual robot that assists you conduct tours over exhibition centres,
+					our website is used to manage and keep track of the tours conducted by the robot.
+					Offering multiple tour types and locations and with options to quickly add, remove, or edit the tours;
+					this is the best place to manage your tours.
+					</p>
+					<h3>Our Team</h3>
+					<p>
+					Adeeb Ahmed
+					</br>
+					Yousef Fares
+					</br>
+					Syed Sabih Ali
+					</br>
+					Aditya Deswal
+					</br>
+					Adrian Pratama Suharto				
+					</p>
+				</div>
+					
+				</div>
+				<div class="col-sm feature-image">
+					<img src="/img/landing_page/cloud_storage.svg" alt="Google Cloud Storage API Logo">
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

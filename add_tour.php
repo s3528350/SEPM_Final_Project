@@ -55,7 +55,7 @@ if (isset($_POST['name'], $_POST['type'], $_POST['min_duration'])) {
 					</div>
 					<div class="form-group">
 					<select id="menu" class="form-control" name="type" onchange="navigate();">
-						<option value="#">Select category...</option>
+						<option value="#">Select Tour Type..</option>
 						<?php
 						$q = "select distinct type from $table_tour_type";
 						$results = mysqli_query($db, $q) or die(mysqli_error($db));
@@ -63,6 +63,21 @@ if (isset($_POST['name'], $_POST['type'], $_POST['min_duration'])) {
 						while ($row = mysqli_fetch_array($results)) {
 
 							print "<option value= {$row['type']}>{$row['type']}</option>";
+						}
+						?>
+					</select>
+
+					</div>
+					<div class="form-group">
+					<select id="menu" class="form-control" name="type" onchange="navigate();">
+						<option value="#">Select Location</option>
+						<?php
+						$q = "select distinct name from $table_location";
+						$results = mysqli_query($db, $q) or die(mysqli_error($db));
+
+						while ($row = mysqli_fetch_array($results)) {
+
+							print "<option value= {$row['name']}>{$row['name']}</option>";
 						}
 						?>
 					</select>

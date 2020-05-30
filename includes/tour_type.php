@@ -28,9 +28,9 @@
                                 </form>
                             </td>
                             <td>
-                                <form action="tour_type.php" method="post">
+                                <form action="delete_tour_type.php" method="post">
                                     <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                                    <button type="submit" name="delte_btn" class="btn btn-danger"> DELETE </button>
+                                    <button type="submit" name="delete_btn" class="btn btn-danger"> DELETE </button>
                                 </form>
                             </td>
                         </tr>

@@ -7,6 +7,7 @@
                 <thead>
                     <tr>
                         <th> Name </th>
+                        <th> Location </th>
                         <th> Tour Type </th>
                         <th>Minimum Time </th>
                         <th>EDIT </th>
@@ -21,6 +22,7 @@
                     while ($row = mysqli_fetch_array($results)) { ?>
                         <tr>
                             <td><?php echo "<a href='tour.php?name={$row['name']}'>{$row['name']}</a>"?></td>
+                            <td><?php echo $row['location']; ?></td>
                             <td><?php echo $row['type']; ?></td>
                             <td><?php echo $row['min_duration']; ?></td>
                             <td>

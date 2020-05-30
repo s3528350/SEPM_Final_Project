@@ -94,13 +94,16 @@ if (isset($_SESSION['login'])) {
 				<div class="col-sm feature-detail">
 					<div class="col">
 					<h2>About Us</h2>
+					</div>
 					<p>
 					Humanoid Robot is a virtual robot that assists you conduct tours over exhibition centres,
 					our website is used to manage and keep track of the tours conducted by the robot.
 					Offering multiple tour types and locations and with options to quickly add, remove, or edit the tours;
 					this is the best place to manage your tours.
 					</p>
+					<div class="col">
 					<h3>Our Team</h3>
+					</div>
 					<p>
 					Adeeb Ahmed
 					</br>
@@ -112,11 +115,6 @@ if (isset($_SESSION['login'])) {
 					</br>
 					Adrian Pratama Suharto				
 					</p>
-				</div>
-					
-				</div>
-				<div class="col-sm feature-image">
-					<img src="/img/landing_page/cloud_storage.svg" alt="Google Cloud Storage API Logo">
 				</div>
 			</div>
 		</div>

@@ -60,13 +60,13 @@ if(isset($_POST['name'],$_POST['description'],$_POST['longitude'],$_POST['latitu
 						<input type="text" class="form-control" name="description" id="description" placeholder="Description" required="required">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" name="longitude" id="longitude" placeholder="Longitude" required="required">
+						<input type="number" class="form-control" name="longitude" id="longitude" placeholder="Longitude" required="required">
                     </div>
                     <div class="form-group">
-						<input type="text" class="form-control" name="latitude" id="latitude" placeholder="Longitude" required="required">
+						<input type="number" class="form-control" name="latitude" id="latitude" placeholder="Latitude" required="required">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" name="minTimeSpent" id="minTimeSpent" placeholder="Minimum time spent" required="required">
+						<input type="number" class="form-control" name="minTimeSpent" id="minTimeSpent" min="0" max="100" placeholder="Minimum time spent" required="required">
 					</div>
 					<div class="form-group">
 						<input type="submit" class="btn btn-lg btn-primary btn-block" name="submit" value="Add">

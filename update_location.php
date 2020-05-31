@@ -27,13 +27,13 @@ if (isset($_POST['edit_btn'])) {
                                     <input type="text" class="form-control" name="edit_description" id="description" value="<?php echo $row['description']; ?>" placeholder="Description" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="edit_longitude" id="longitude" value="<?php echo $row['longitude']; ?>" placeholder="Longitude" required="required">
+                                    <input type="number" class="form-control" name="edit_longitude" id="longitude" value="<?php echo $row['longitude']; ?>" placeholder="Longitude" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="edit_latitude" id="latitude" value="<?php echo $row['latitude']; ?>" placeholder="Latitude" required="required">
+                                    <input type="number" class="form-control" name="edit_latitude" id="latitude" value="<?php echo $row['latitude']; ?>" placeholder="Latitude" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="edit_minTimeSpent" id="minTimeSpent" value="<?php echo $row['minTimeSpent']; ?>" placeholder="Minimum Time Spent" required="required">
+                                    <input type="number" class="form-control" name="edit_minTimeSpent" id="minTimeSpent" min="0" max="100" value="<?php echo $row['minTimeSpent']; ?>" placeholder="Minimum Time Spent" required="required">
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-lg btn-primary btn-block" name="update_btn" value="Update">

@@ -114,7 +114,7 @@ if (isset($_POST['name'], $_POST['type'], $_POST['min_duration'],$_POST['locatio
 					</select>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" name="min_duration" id="min_duration" placeholder="Minimum Duration" required="required">
+						<input type="number" class="form-control" name="min_duration" id="min_duration" placeholder="Sum of Minimum Time Spent" required="required">
 					</div>
 					<div class="form-group">
 						<input type="submit" class="btn btn-lg btn-primary btn-block" name="submit" value="Add Tour">

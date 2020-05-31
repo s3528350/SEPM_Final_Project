@@ -12,10 +12,8 @@
                         <th>Longitude </th>
                         <th>Latitude </th>
                         <th>Minimum Time Spent </th>
-                        <?php if(isset($_SESSION['admin'])):?>
                         <th>EDIT </th>
                         <th>DELETE </th>
-                        <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,7 +29,6 @@
                             <td><?php echo $row['longitude']; ?></td>
                             <td><?php echo $row['latitude']; ?></td>
                             <td><?php echo $row['minTimeSpent']; ?></td>
-                            <?php if(isset($_SESSION['admin'])):?>
                             <td>
                                 <form action="update_location.php" method="post">
                                     <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
@@ -44,7 +41,6 @@
                                     <H6>Upcoming feature</H6>
                                 </form>
                             </td>
-                            <?php endif; ?>
                         </tr>
                     <?php } ?>
                 </tbody>

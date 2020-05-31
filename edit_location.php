@@ -12,6 +12,6 @@ if(isset($_POST['update_btn']))
 
     $q = "UPDATE $table_location set id='$id', name='$name', description='$description', longitude = '$longitude',latitude = '$latitude',minTimeSpent = '$minTimeSpent' where id = '$id'";
     mysqli_query($db, $q) or die(mysqli_error($db));
-    header("Location: adminPanel.php");
+    header("Location: memberPanel.php");
 }
 ?>

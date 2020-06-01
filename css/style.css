@@ -1,0 +1,165 @@
+/* =============
+   global styles
+   ============= */
+
+:root {
+    --white: #f8f9fa;
+    --offWhite: #f4f4f4;
+    --lightGray: #e0e0e0;
+    --black: #262626;
+    --gcpBlue: #4285f4;
+}
+
+
+/* =============
+   typography
+   ============= */
+
+h1 {
+    padding-top: 1em;
+    margin-bottom: 50px;
+}
+
+
+/* =============
+   layout
+   ============= */
+
+
+/* basic */
+
+body {
+    background-color: var(--offWhite);
+    color: var(--black);
+}
+
+#main-container {
+    padding-top: 25px;
+}
+
+
+/* header */
+
+header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--lightGray);
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+
+/* footer */
+
+footer {
+    padding-top: 25px;
+    text-align: center;
+}
+
+
+/* landing page */
+
+#landing-page {
+    text-align: center;
+}
+
+#landing-page #hero {
+    padding: 100px;
+    background-image: url("/assignment2-sepm/banner.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#landing-page #hero-detail h1,
+#landing-page #hero-detail h3 {
+    color: var(--white);
+    text-shadow: 2px 2px 5px var(--black);
+}
+
+#landing-page #hero-detail h1 {
+    margin-bottom: 25px;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+#landing-page #hero-detail h3 {
+    margin: 25px 0 50px 0;
+}
+
+#landing-page #about,
+#landing-page #features {
+    padding-bottom: 25px;
+    background-color: var(--white);
+}
+
+#landing-page #about h2,
+#landing-page #features h2 {
+    padding-top: 1em;
+    margin-bottom: 50px;
+    font-size: 2.5em;
+}
+
+#landing-page #about i {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+#landing-page #about .about-item {
+    margin-bottom: 25px;
+}
+
+#landing-page #features .feature-row {
+    margin-bottom: 25px;
+}
+
+#landing-page #features .feature-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#landing-page #features .feature-image img {
+    height: 150px;
+}
+
+#landing-page #features .feature-detail {
+    text-align: left;
+}
+
+
+/* forms */
+
+.content-form {
+    padding: 45px;
+    margin-bottom: 15px;
+    background-color: var(--white);
+    border: 1px solid var(--lightGray);
+    border-radius: 5px;
+}
+
+.content-form h1 {
+    padding-top: 0;
+    padding-bottom: 25px;
+}
+
+
+/* home page */
+
+#home img {
+    max-width: 100%;
+    border-radius: 2.5%;
+    margin-bottom: 15px;
+}
+
+
+/* detail */
+
+.content img {
+    max-width: 100%;
+}
+
+.content p {
+    padding-top: 15px;
+}

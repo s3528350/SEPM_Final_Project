@@ -33,14 +33,14 @@
 2. Admins and Assistants both can edit locations information.
 3. Admins and Assistants both can delete locations.
 
-# Tours
+## Tours
 1. Admins and Assistants both can add tours to the system.
 2. Admins and Assistants both can edit tours information.
 3. Admins and Assistants both can edit tour types.
 4. A tour can have copy locations.
 5. Admins and Assistants both can delete tours.
 
-# For More Info
+## For More Info
 1. Check the folder `SEPM_Assignment2` inside this repo.
 2. The folder contains the Product Backlog and 3 Sprint Backlogs that corresponds to this Project. 
 
